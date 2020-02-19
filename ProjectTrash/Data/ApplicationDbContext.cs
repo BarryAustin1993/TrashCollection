@@ -30,13 +30,198 @@ namespace ProjectTrash.Data
                 .HasData(
                     new IdentityRole
                     {
+                        Id = "13579 - customer",
                         Name = "Customer",
-                        NormalizedName = "Customer"
+                        NormalizedName = "CUSTOMER"
                     },
                     new IdentityRole
                     {
+                        Id = "02468 - employee",
                         Name = "Employee",
-                        NormalizedName = "Employee"
+                        NormalizedName = "EMPLOYEE"
+                    });
+
+            builder.Entity<IdentityUser>()
+                .HasData(
+                    new IdentityUser
+                    {
+                        Id = "1-Ajpbarry",
+                        UserName = "Ajpbarry",
+                        NormalizedUserName = "AJPBARRY",
+                        Email = "Ajpbarry@gmail.com",
+                        NormalizedEmail = "AJPBARRY@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4147370256",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "2-ABaird",
+                        UserName = "ABaird",
+                        NormalizedUserName = "ABAIRD",
+                        Email = "ABaird@gmail.com",
+                        NormalizedEmail = "ABAIRD@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4141234567",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "3-DSteinhafel",
+                        UserName = "DSteinhafel",
+                        NormalizedUserName = "DSTEINHAFEL",
+                        Email = "DSteinhafel@gmail.com",
+                        NormalizedEmail = "DSTEINHAFEL@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4149876543",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "4-MAcker",
+                        UserName = "MAcker",
+                        NormalizedUserName = "MACKER",
+                        Email = "MAcker@gmail.com",
+                        NormalizedEmail = "MACKER@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4142345678",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "5-RHolman",
+                        UserName = "RHolman",
+                        NormalizedUserName = "RHOLMAN",
+                        Email = "RHolman@gmail.com",
+                        NormalizedEmail = "RHOLMAN@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4144567890",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "6-DTirnanic",
+                        UserName = "DTirnanic",
+                        NormalizedUserName = "DTIRNANIC",
+                        Email = "DTirnanic@gmail.com",
+                        NormalizedEmail = "DTIRNANIC@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4140987654",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "7-GSanchez",
+                        UserName = "GSanchez",
+                        NormalizedUserName = "GSANCHEZ",
+                        Email = "GSanchez@gmail.com",
+                        NormalizedEmail = "GSANCHEZ@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4146853690",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "8-JBrockman",
+                        UserName = "JBrockman",
+                        NormalizedUserName = "JBROCKMAN",
+                        Email = "JBrockman@gmail.com",
+                        NormalizedEmail = "JBROCKMAN@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "4148760987",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "9-NSeibel",
+                        UserName = "NSeibel",
+                        NormalizedUserName = "NSEIBEL",
+                        Email = "NSeibel@gmail.com",
+                        NormalizedEmail = "NSEIBEL@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "3138760987",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "10-DLagrange",
+                        UserName = "DLagrange",
+                        NormalizedUserName = "DLAGRANGE",
+                        Email = "DLagrange@gmail.com",
+                        NormalizedEmail = "DLAGRANGE@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "3131234567",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "11-CKIng",
+                        UserName = "CKIng",
+                        NormalizedUserName = "CKING",
+                        Email = "CKIng@gmail.com",
+                        NormalizedEmail = "CKING@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "3130865432",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
+                    },
+                    new IdentityUser
+                    {
+                        Id = "12-MTerril",
+                        UserName = "MTerril",
+                        NormalizedUserName = "MTERRIL",
+                        Email = "MTerril@gmail.com",
+                        NormalizedEmail = "MTERRIL@GMAIL.COM",
+                        EmailConfirmed = true,
+                        PasswordHash = "password",
+                        PhoneNumber = "3136853963",
+                        PhoneNumberConfirmed = true,
+                        TwoFactorEnabled = true,
+                        LockoutEnabled = true,
+                        AccessFailedCount = 0
                     });
 
             builder.Entity<WeeklyPickUp>()
@@ -82,13 +267,16 @@ namespace ProjectTrash.Data
                    new Customer
                    {
                        Id = 1,
+                       UserId = "1-Ajpbary",
                        accountID = 1,
                        firstName = "Austin",
                        lastName = "Barry"
+                       
                    },
                    new Customer
                    {
                        Id = 2,
+                       UserId = "2-ABaird",
                        accountID = 2,
                        firstName = "Andrew",
                        lastName = "Baird"
@@ -96,6 +284,7 @@ namespace ProjectTrash.Data
                    new Customer
                    {
                        Id = 3,
+                       UserId = "3-DSteinhafel",
                        accountID = 3,
                        firstName = "David",
                        lastName = "Steinhafel"
@@ -103,6 +292,7 @@ namespace ProjectTrash.Data
                    new Customer
                    {
                        Id = 4,
+                       UserId = "4-MAcker",
                        accountID = 4,
                        firstName = "Matthew",
                        lastName = "Acker"
@@ -110,6 +300,7 @@ namespace ProjectTrash.Data
                    new Customer
                    {
                        Id = 5,
+                       UserId = "5-RHolman",
                        accountID = 5,
                        firstName = "Ryan",
                        lastName = "Holman"
@@ -117,6 +308,7 @@ namespace ProjectTrash.Data
                    new Customer
                    {
                        Id = 6,
+                       UserId = "6-DTirnanic",
                        accountID = 6,
                        firstName = "Dejan",
                        lastName = "Tirnanic"
@@ -124,6 +316,7 @@ namespace ProjectTrash.Data
                    new Customer
                    {
                        Id = 7,
+                       UserId = "7-GSanchez",
                        accountID = 7,
                        firstName = "Gustavo",
                        lastName = "Sanchez"
@@ -131,6 +324,7 @@ namespace ProjectTrash.Data
                    new Customer
                    {
                        Id = 8,
+                       UserId = "8-JBrockmann",
                        accountID = 8,
                        firstName = "Jacob",
                        lastName = "Brockmann"
@@ -336,6 +530,7 @@ namespace ProjectTrash.Data
                    new Employee
                    {
                        ID = 1,
+                       UserId = "9-NSeibel",
                        firstName = "Nevin",
                        lastName = "Seibel",
                        zipcode = 53211
@@ -343,6 +538,7 @@ namespace ProjectTrash.Data
                    new Employee
                    {
                        ID = 2,
+                       UserId = "10-DLangrange",
                        firstName = "David",
                        lastName = "Lagrange",
                        zipcode = 53212
@@ -350,6 +546,7 @@ namespace ProjectTrash.Data
                    new Employee
                    {
                        ID = 3,
+                       UserId = "11-CKing",
                        firstName = "Charles",
                        lastName = "King",
                        zipcode = 53168
@@ -357,10 +554,75 @@ namespace ProjectTrash.Data
                    new Employee
                    {
                        ID = 4,
+                       UserId = "12-MTerril",
                        firstName = "Mike",
                        lastName = "Terril",
                        zipcode = 48088
                    });
+
+            builder.Entity<IdentityUserRole<string>>()
+                .HasData(
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "1-Ajpbarry",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "2-ABaird",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "3-DSteinhafel",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "4-MAcker",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "5-RHolman",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "6-DTirnanic",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "7-GSanchez",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "13579 - customer",
+                        UserId = "8-JBrockman",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "02468 - employee",
+                        UserId = "9-NSeibel",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "02468 - employee",
+                        UserId = "10-DLangrange",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "02468 - employee",
+                        UserId = "11-CKing",
+                    },
+                    new IdentityUserRole<string>
+                    {
+                        RoleId = "02468 - employee",
+                        UserId = "12-MTerril",
+                    });
+        
         }
     }
 }
