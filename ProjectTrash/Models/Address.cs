@@ -11,12 +11,12 @@ namespace ProjectTrash.Models
         [Key]
         public int ID { get; set; }
 
-        public string address;
+        public string address { get; set; }
 
-        public string city;
+        public string city { get; set; }
 
-        public string state;
+        public string state { get; set; }
 
-        public int zipCode;
+        public int zipCode { get; set; }
     }
 }

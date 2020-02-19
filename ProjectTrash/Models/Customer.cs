@@ -21,9 +21,9 @@ namespace ProjectTrash.Models
         public int accountID { get; set; }
         public Account account { get; set; }
 
-        public string firstName;
+        public string firstName { get; set; }
 
-        public string lastName;
+        public string lastName { get; set; }
     }
 
 }
