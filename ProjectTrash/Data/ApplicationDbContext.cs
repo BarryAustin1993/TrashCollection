@@ -128,6 +128,13 @@ namespace ProjectTrash.Data
                        accountID = 6,
                        firstName = "Gustavo",
                        lastName = "Sanchez"
+                   },
+                   new Customer
+                   {
+                       Id = 7,
+                       accountID = 7,
+                       firstName = "Jacob",
+                       lastName = "Brockmann"
                    });
 
             builder.Entity<Account>()
@@ -181,79 +188,172 @@ namespace ProjectTrash.Data
                        balance = 150,
                        AddressID = 6,
                        weeklyPickUp = 2
+                   },
+                   new Account
+                   {
+                       ID = 7,
+                       balance = 20,
+                       AddressID = 1,
+                       weeklyPickUp = 1
                    }) ;
 
-            _ = builder.Entity<AccountSubscription>()
+            builder.Entity<AccountSubscription>()
                .HasData(
                    new AccountSubscription
                    {
                        Id = 0,
                        isActive = true,
                        isSuspended = false,
-                       accountStartDate = new DateTime(2008, 3, 1)
+                       accountStartDate = new DateTime(2020, 01, 01)
                    },
                    new AccountSubscription
                    {
                        Id = 1,
-                       isActive = true,
+                       isActive = false,
                        isSuspended = false,
-                       accountStartDate = new DateTime(2008, 3, 1),
-                       accountEndDate = ,
-                       suspensionStartDate = ,
-                       suspensionEndDate =
+                       accountStartDate = new DateTime(2008, 04, 04),
+                       accountEndDate = new DateTime(2016, 08, 08),
                    },
                    new AccountSubscription
                    {
                        Id = 2,
                        isActive = true,
-                       isSuspended = false,
-                       accountStartDate = new DateTime(2008, 3, 1),
-                       accountEndDate = ,
-                       suspensionStartDate = ,
-                       suspensionEndDate =
+                       isSuspended = true,
+                       accountStartDate = new DateTime(2016, 03, 03),
+                       suspensionStartDate = new DateTime(2020, 01, 20),
+                       suspensionEndDate = new DateTime(2020, 05, 04)
                    },
                    new AccountSubscription
                    {
                        Id = 3,
                        isActive = true,
                        isSuspended = false,
-                       accountStartDate = new DateTime(2008, 3, 1),
-                       accountEndDate = ,
-                       suspensionStartDate = ,
-                       suspensionEndDate =
+                       accountStartDate = new DateTime(2018, 06, 04),
+                       suspensionStartDate = new DateTime(2019, 08, 04),
+                       suspensionEndDate = new DateTime(2020, 01, 01)
                    },
                    new AccountSubscription
                    {
                        Id = 4,
                        isActive = true,
                        isSuspended = false,
-                       accountStartDate = new DateTime(2008, 3, 1),
-                       accountEndDate = ,
-                       suspensionStartDate = ,
-                       suspensionEndDate =
+                       accountStartDate = new DateTime(2020, 01, 01)
                    },
                    new AccountSubscription
                    {
                        Id = 5,
-                       isActive = true,
+                       isActive = false,
                        isSuspended = false,
-                       accountStartDate = new DateTime(2008, 3, 1),
-                       accountEndDate = ,
-                       suspensionStartDate = ,
-                       suspensionEndDate =
+                       accountStartDate = new DateTime(2008, 04, 04),
+                       accountEndDate = new DateTime(2016, 08, 08),
                    },
                    new AccountSubscription
                    {
                        Id = 6,
                        isActive = true,
                        isSuspended = false,
-                       accountStartDate = new DateTime(2008, 3, 1),
-                       accountEndDate = ,
-                       suspensionStartDate = ,
-                       suspensionEndDate =
-                   }) ;
+                       accountStartDate = new DateTime(2018, 06, 04),
+                       suspensionStartDate = new DateTime(2019, 08, 04),
+                       suspensionEndDate = new DateTime(2020, 01, 01)
+                   },
+                   new AccountSubscription
+                   {
+                       Id = 7,
+                       isActive = true,
+                       isSuspended = false,
+                       accountStartDate = new DateTime(2018, 06, 04),
+                   });
+
+            builder.Entity<Address>()
+               .HasData(
+                   new Address
+                   {
+                       ID = 0,
+                       address = "14538 Talbot drive",
+                       city = "Warren",
+                       state = "Mi",
+                       zipCode = 48088
+                   },
+                   new Address
+                   {
+                       ID = 1,
+                       address = "6228 238th Avenue",
+                       city = "Salem",
+                       state = "Wi",
+                       zipCode = 53168
+                   },
+                   new Address
+                   {
+                       ID = 2,
+                       address = "6118 North Downer Avenue",
+                       city = "Milwaukee",
+                       state = "Wi",
+                       zipCode = 53211
+                   },
+                   new Address
+                   {
+                       ID = 3,
+                       address = "2438 North Bremen Street",
+                       city = "Milwaukee",
+                       state = "Wisconsin",
+                       zipCode = 53212
+                   },
+                   new Address
+                   {
+                       ID = 4,
+                       address = "3304 North Pierce Street",
+                       city = "Milwaukee",
+                       state = "Wisconsin",
+                       zipCode = 53212
+                   },
+                   new Address
+                   {
+                       ID = 5,
+                       address = "3232 North Summit Avenue",
+                       city = "Milwaukee",
+                       state = "Wisconsin",
+                       zipCode = 53211
+                   },
+                   new Address
+                   {
+                       ID = 6,
+                       address = "3333 North Hacket Avenue",
+                       city = "Milwaukee",
+                       state = "Wisconsin",
+                       zipCode = 53211
+
+                   });
+
+            builder.Entity<Employee>()
+               .HasData(    
+                   new Employee
+                   {
+                       ID = 0,
+                       firstName = "Nevin",
+                       lastName = "Seibel",
+                       zipcode = 53211
+                   },
+                   new Employee
+                   {
+                       ID = 1,
+                       firstName = "David",
+                       lastName = "Lagrange",
+                       zipcode = 53212
+                   },
+                   new Employee
+                   {
+                       ID = 2,
+                       firstName = "Charles",
+                       lastName = "King",
+                       zipcode = 53168
+                   },
+                   new Employee
+                   {
+                       ID = 3,
+                       firstName = "Mike",
+                       lastName = "Terril",
+                       zipcode = 48088
+                   });
         }
-
-
     }
 }
