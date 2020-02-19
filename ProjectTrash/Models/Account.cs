@@ -22,8 +22,8 @@ namespace ProjectTrash.Models
         public int AddressID { get; set; }
         public Address Address { get; set; }
 
-        [ForeignKey("WeeklyPickup")]
-        public int weeklyPickUp { get; set; }   
+        [ForeignKey("WeeklyPickUp")]
+        public int WeeklyPickUpID { get; set; }   
         public WeeklyPickUp WeeklyPickUp { get; set; }
 
 

@@ -17,7 +17,7 @@ namespace ProjectTrash.Models
         public string UserId { get; set; }
         public IdentityUser ApplicationUser { get; set; }
 
-        [ForeignKey("Account")]
+        [ForeignKey("account")]
         public int accountID { get; set; }
         public Account account { get; set; }
 

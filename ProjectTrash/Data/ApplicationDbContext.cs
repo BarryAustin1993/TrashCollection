@@ -44,37 +44,37 @@ namespace ProjectTrash.Data
                 .HasData(
                     new WeeklyPickUp
                     {
-                        ID = 0,
+                        ID = 1,
                         dayOfTheWeek = "Monday"
                     },
                     new WeeklyPickUp
                     {
-                        ID = 1,
+                        ID = 2,
                         dayOfTheWeek = "Tuesday"
                     },
                     new WeeklyPickUp
                     {
-                        ID = 2,
+                        ID = 3,
                         dayOfTheWeek = "Wednesday"
                     },
                     new WeeklyPickUp
                     {
-                        ID = 3,
+                        ID = 4,
                         dayOfTheWeek = "Thursday"
                     },
                     new WeeklyPickUp
                     {
-                        ID = 4,
+                        ID = 5,
                         dayOfTheWeek = "Friday"
                     },
                     new WeeklyPickUp
                     {
-                        ID = 5,
+                        ID = 6,
                         dayOfTheWeek = "Saturday"
                     },
                     new WeeklyPickUp
                     {
-                        ID = 6,
+                        ID = 7,
                         dayOfTheWeek = "Sunday"
                     });
 
@@ -82,57 +82,57 @@ namespace ProjectTrash.Data
                .HasData(
                    new Customer
                    {
-                       Id = 0,
-                       accountID = 0,
+                       Id = 1,
+                       accountID = 1,
                        firstName = "Austin",
                        lastName = "Barry"
                    },
                    new Customer
                    {
-                       Id = 1,
-                       accountID = 1,
+                       Id = 2,
+                       accountID = 2,
                        firstName = "Andrew",
                        lastName = "Baird"
                    },
                    new Customer
                    {
-                       Id = 2,
-                       accountID = 2,
+                       Id = 3,
+                       accountID = 3,
                        firstName = "David",
                        lastName = "Steinhafel"
                    },
                    new Customer
                    {
-                       Id = 3,
-                       accountID = 3,
+                       Id = 4,
+                       accountID = 4,
                        firstName = "Matthew",
                        lastName = "Acker"
                    },
                    new Customer
                    {
-                       Id = 4,
-                       accountID = 4,
+                       Id = 5,
+                       accountID = 5,
                        firstName = "Ryan",
                        lastName = "Holman"
                    },
                    new Customer
                    {
-                       Id = 5,
-                       accountID = 5,
+                       Id = 6,
+                       accountID = 6,
                        firstName = "Dejan",
                        lastName = "Tirnanic"
                    },
                    new Customer
                    {
-                       Id = 6,
-                       accountID = 6,
+                       Id = 7,
+                       accountID = 7,
                        firstName = "Gustavo",
                        lastName = "Sanchez"
                    },
                    new Customer
                    {
-                       Id = 7,
-                       accountID = 7,
+                       Id = 8,
+                       accountID = 8,
                        firstName = "Jacob",
                        lastName = "Brockmann"
                    });
@@ -141,74 +141,82 @@ namespace ProjectTrash.Data
                .HasData(
                    new Account
                    {
-                       ID = 0,
+                       ID = 1,
                        balance = 25,
-                       AddressID = 0,
-                       weeklyPickUp = 3
+                       AddressID = 1,
+                       AccountSubscriptionID = 1,
+                       WeeklyPickUpID = 3
 
                    },
                    new Account
                    {
-                       ID = 1,
-                       balance = 50,
-                       AddressID = 1,
-                       weeklyPickUp = 4
-                   },
-                   new Account
-                   {
                        ID = 2,
-                       balance = 25,
+                       balance = 50,
                        AddressID = 2,
-                       weeklyPickUp = 5
+                       AccountSubscriptionID = 2,
+                       WeeklyPickUpID = 4
                    },
                    new Account
                    {
                        ID = 3,
-                       balance = 50,
+                       balance = 25,
                        AddressID = 3,
-                       weeklyPickUp = 6
+                       AccountSubscriptionID = 3,
+                       WeeklyPickUpID = 5
                    },
                    new Account
                    {
                        ID = 4,
-                       balance = 0,
+                       balance = 50,
                        AddressID = 4,
-                       weeklyPickUp = 0
+                       AccountSubscriptionID = 4,
+                       WeeklyPickUpID = 6
                    },
                    new Account
                    {
                        ID = 5,
-                       balance = 33,
+                       balance = 0,
                        AddressID = 5,
-                       weeklyPickUp = 1
+                       AccountSubscriptionID = 5,
+                       WeeklyPickUpID = 1
                    },
                    new Account
                    {
                        ID = 6,
-                       balance = 150,
+                       balance = 33,
                        AddressID = 6,
-                       weeklyPickUp = 2
+                       AccountSubscriptionID = 6,
+                       WeeklyPickUpID = 1
                    },
                    new Account
                    {
                        ID = 7,
+                       balance = 150,
+                       AddressID = 7,
+                       AccountSubscriptionID = 7,
+                       WeeklyPickUpID = 2
+                   },
+                   new Account
+                   {
+                       ID = 8,
                        balance = 20,
-                       AddressID = 1,
-                       weeklyPickUp = 1
+                       AddressID = 2,
+                       AccountSubscriptionID = 8,
+                       WeeklyPickUpID = 1
                    }) ;
 
             builder.Entity<AccountSubscription>()
                .HasData(
                    new AccountSubscription
                    {
-                       Id = 0,
+                       Id = 1,
                        isActive = true,
                        isSuspended = false,
                        accountStartDate = new DateTime(2020, 01, 01)
                    },
                    new AccountSubscription
                    {
-                       Id = 1,
+                       Id = 2,
                        isActive = false,
                        isSuspended = false,
                        accountStartDate = new DateTime(2008, 04, 04),
@@ -216,7 +224,7 @@ namespace ProjectTrash.Data
                    },
                    new AccountSubscription
                    {
-                       Id = 2,
+                       Id = 3,
                        isActive = true,
                        isSuspended = true,
                        accountStartDate = new DateTime(2016, 03, 03),
@@ -225,7 +233,7 @@ namespace ProjectTrash.Data
                    },
                    new AccountSubscription
                    {
-                       Id = 3,
+                       Id = 4,
                        isActive = true,
                        isSuspended = false,
                        accountStartDate = new DateTime(2018, 06, 04),
@@ -234,14 +242,14 @@ namespace ProjectTrash.Data
                    },
                    new AccountSubscription
                    {
-                       Id = 4,
+                       Id = 5,
                        isActive = true,
                        isSuspended = false,
                        accountStartDate = new DateTime(2020, 01, 01)
                    },
                    new AccountSubscription
                    {
-                       Id = 5,
+                       Id = 6,
                        isActive = false,
                        isSuspended = false,
                        accountStartDate = new DateTime(2008, 04, 04),
@@ -249,7 +257,7 @@ namespace ProjectTrash.Data
                    },
                    new AccountSubscription
                    {
-                       Id = 6,
+                       Id = 7,
                        isActive = true,
                        isSuspended = false,
                        accountStartDate = new DateTime(2018, 06, 04),
@@ -258,7 +266,7 @@ namespace ProjectTrash.Data
                    },
                    new AccountSubscription
                    {
-                       Id = 7,
+                       Id = 8,
                        isActive = true,
                        isSuspended = false,
                        accountStartDate = new DateTime(2018, 06, 04),
@@ -268,7 +276,7 @@ namespace ProjectTrash.Data
                .HasData(
                    new Address
                    {
-                       ID = 0,
+                       ID = 1,
                        address = "14538 Talbot drive",
                        city = "Warren",
                        state = "Mi",
@@ -276,7 +284,7 @@ namespace ProjectTrash.Data
                    },
                    new Address
                    {
-                       ID = 1,
+                       ID = 2,
                        address = "6228 238th Avenue",
                        city = "Salem",
                        state = "Wi",
@@ -284,7 +292,7 @@ namespace ProjectTrash.Data
                    },
                    new Address
                    {
-                       ID = 2,
+                       ID = 3,
                        address = "6118 North Downer Avenue",
                        city = "Milwaukee",
                        state = "Wi",
@@ -292,7 +300,7 @@ namespace ProjectTrash.Data
                    },
                    new Address
                    {
-                       ID = 3,
+                       ID = 4,
                        address = "2438 North Bremen Street",
                        city = "Milwaukee",
                        state = "Wisconsin",
@@ -300,7 +308,7 @@ namespace ProjectTrash.Data
                    },
                    new Address
                    {
-                       ID = 4,
+                       ID = 5,
                        address = "3304 North Pierce Street",
                        city = "Milwaukee",
                        state = "Wisconsin",
@@ -308,7 +316,7 @@ namespace ProjectTrash.Data
                    },
                    new Address
                    {
-                       ID = 5,
+                       ID = 6,
                        address = "3232 North Summit Avenue",
                        city = "Milwaukee",
                        state = "Wisconsin",
@@ -316,7 +324,7 @@ namespace ProjectTrash.Data
                    },
                    new Address
                    {
-                       ID = 6,
+                       ID = 7,
                        address = "3333 North Hacket Avenue",
                        city = "Milwaukee",
                        state = "Wisconsin",
@@ -328,28 +336,28 @@ namespace ProjectTrash.Data
                .HasData(    
                    new Employee
                    {
-                       ID = 0,
+                       ID = 1,
                        firstName = "Nevin",
                        lastName = "Seibel",
                        zipcode = 53211
                    },
                    new Employee
                    {
-                       ID = 1,
+                       ID = 2,
                        firstName = "David",
                        lastName = "Lagrange",
                        zipcode = 53212
                    },
                    new Employee
                    {
-                       ID = 2,
+                       ID = 3,
                        firstName = "Charles",
                        lastName = "King",
                        zipcode = 53168
                    },
                    new Employee
                    {
-                       ID = 3,
+                       ID = 4,
                        firstName = "Mike",
                        lastName = "Terril",
                        zipcode = 48088
