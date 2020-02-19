@@ -11,6 +11,8 @@ namespace ProjectTrash.Models
         [Key]
         public int Id { get; set; }
 
+        public bool isActive { get; set; }
+
         public bool isSuspended { get; set; }
 
         public DateTime accountStartDate { get; set; }

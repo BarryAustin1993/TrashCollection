@@ -18,9 +18,6 @@ namespace ProjectTrash.Models
 
         public DateTime pickUpDate { get; set; }
 
-        [ForeignKey("Address")]
-        public int AddressID { get; set; }
-        public Address Address { get; set; }
 
         [ForeignKey("Employee")]
         public int EmployeeID { get; set; }
