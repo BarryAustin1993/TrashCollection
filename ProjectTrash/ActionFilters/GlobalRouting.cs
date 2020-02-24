@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace ProjectTrash.ActionFilters
@@ -32,7 +33,7 @@ namespace ProjectTrash.ActionFilters
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
