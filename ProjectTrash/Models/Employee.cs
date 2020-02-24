@@ -11,16 +11,16 @@ namespace ProjectTrash.Models
     public class Employee
     {
         [Key]
-        public int ID { get; set; }
+        public int EmployeeID { get; set; }
 
         [ForeignKey("IdentityUser")]
         public string UserId { get; set; }
         public IdentityUser IdentityUser { get; set; }
 
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
 
-        public string lastName { get; set; }
+        public string LastName { get; set; }
 
-        public int zipcode { get; set; }
+        public int ZipCode { get; set; }
     }
 }

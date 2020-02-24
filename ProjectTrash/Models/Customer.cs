@@ -11,15 +11,11 @@ namespace ProjectTrash.Models
     public class Customer
     {
         [Key]
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
 
         [ForeignKey("IdentityUser")]
         public string UserId { get; set; }
         public IdentityUser IdentityUser { get; set; }
-
-        [ForeignKey("Account")]
-        public int? AccountID { get; set; }
-        public Account Account { get; set; }
 
         public string FirstName { get; set; }
 

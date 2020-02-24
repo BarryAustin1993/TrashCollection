@@ -10,20 +10,20 @@ namespace ProjectTrash.Models
     public class PickUp
     {
         [Key]
-        public int ID { get; set; }
+        public int PickUpID { get; set; }
 
         [ForeignKey("Account")]
         public int AccountID { get; set; }
         public Account Account { get; set; }
 
-        public DateTime pickUpDate { get; set; }
+        public DateTime PickUpDate { get; set; }
 
 
         [ForeignKey("Employee")]
         public int? EmployeeID { get; set; }
         public Employee Employee { get; set; }
 
-        public bool completed { get; set; }
+        public bool Completed { get; set; }
     }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,20 +9,21 @@ namespace ProjectTrash.Models
 {
     public class AccountSubscription
     {
-        [Key]
-        public int Id { get; set; }
+        [Key, ForeignKey("Account")]
+        public int AccountSubscritionId { get; set; }
+        public Account Account { get; set; }
 
-        public bool isActive { get; set; }
+        public bool IsActive { get; set; }
 
-        public bool isSuspended { get; set; }
+        public bool IsSuspended { get; set; }
 
-        public DateTime accountStartDate { get; set; }
+        public DateTime AccountStartDate { get; set; }
 
-        public DateTime accountEndDate { get; set; }
+        public DateTime AccountEndDate { get; set; }
 
-        public DateTime suspensionStartDate { get; set; }
+        public DateTime SuspensionStartDate { get; set; }
 
-        public DateTime suspensionEndDate { get; set; }
+        public DateTime SuspensionEndDate { get; set; }
 
 
     }

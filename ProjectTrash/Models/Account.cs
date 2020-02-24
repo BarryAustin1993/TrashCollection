@@ -10,22 +10,12 @@ namespace ProjectTrash.Models
     public class Account
     {
         [Key]
-        public int ID { get; set; }
+        public int AccountID { get; set; }
 
-        public double balance { get; set; }
+        public double Balance { get; set; }
 
-        [ForeignKey("AccountSubscription")]
-        public int? AccountSubscriptionID { get; set; }
-        public AccountSubscription AccountSubscription { get; set; }
-
-        [ForeignKey("Address")]
-        public int? AddressID { get; set; }
-        public Address Address { get; set; }
-
-        [ForeignKey("WeeklyPickUp")]
-        public int? WeeklyPickUpID { get; set; }   
-        public WeeklyPickUp WeeklyPickUp { get; set; }
-
-
+        [ForeignKey("Customer")]
+        public int CustomerId { get; set; }
+        public Customer customer { get; set; }
     }
 }
