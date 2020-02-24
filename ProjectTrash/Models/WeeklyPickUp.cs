@@ -14,6 +14,7 @@ namespace ProjectTrash.Models
         public int WeeklyPickUpId { get; set; }
 
         public string DayOfTheWeek { get; set; }
+
         
     }
 }

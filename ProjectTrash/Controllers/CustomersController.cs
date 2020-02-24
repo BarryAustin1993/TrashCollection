@@ -56,7 +56,7 @@ namespace ProjectTrash.Controllers
                 {
                     Address = new Address(),
                     AccountSubscription = new AccountSubscription(),
-                    WeeklyPickUp = new SelectList (Days)
+                    WeeklyPickUp = new WeeklyPickUp()
                 }
             };
             return View (customer);

@@ -45,9 +45,8 @@
                 <span asp-validation-for="Account.Address.ZipCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Account.WeeklyPickUp.DayOfTheWeek"> </label>
-                <select asp-for="Account.WeeklyPickUp.DayOfTheWeek" class="form-control" asp-items="@DayOfWeek"> </select>
-                <span asp-validation-for="Account.WeeklyPickUp.DayOfTheWeek" class="text-danger"> </span>
+                <label asp-for="Account.WeeklyPickUp.DayOfTheWeek" class="control-label"></label>
+                <select asp-for="Account.WeeklyPickUp.DayOfTheWeek" class="form-control" asp-items="Html.GetEnumSelectList<DayOfWeek>()"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

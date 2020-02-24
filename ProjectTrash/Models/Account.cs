@@ -10,6 +10,9 @@ namespace ProjectTrash.Models
 {
     public class Account
     {
+
+        
+
         public Account()
         {
             this.AccountSubscription = new AccountSubscription();
@@ -20,8 +23,6 @@ namespace ProjectTrash.Models
 
         public double Balance { get; set; }
 
-        
-        
         public virtual AccountSubscription AccountSubscription { get; set; }
 
         public virtual Address Address { get; set; }
