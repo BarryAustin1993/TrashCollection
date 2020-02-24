@@ -22,7 +22,7 @@ namespace ProjectTrash.Controllers
         // GET: Employees
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Employees.Include(e => e.ApplicationUser);
+            var applicationDbContext = _context.Employees.Include(e => e.IdentityUser);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace ProjectTrash.Controllers
             }
 
             var employee = await _context.Employees
-                .Include(e => e.ApplicationUser)
+                .Include(e => e.IdentityUser)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (employee == null)
             {
@@ -131,7 +131,7 @@ namespace ProjectTrash.Controllers
             }
 
             var employee = await _context.Employees
-                .Include(e => e.ApplicationUser)
+                .Include(e => e.IdentityUser)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (employee == null)
             {

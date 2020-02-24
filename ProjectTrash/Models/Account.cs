@@ -15,15 +15,15 @@ namespace ProjectTrash.Models
         public double balance { get; set; }
 
         [ForeignKey("AccountSubscription")]
-        public int AccountSubscriptionID { get; set; }
+        public int? AccountSubscriptionID { get; set; }
         public AccountSubscription AccountSubscription { get; set; }
 
         [ForeignKey("Address")]
-        public int AddressID { get; set; }
+        public int? AddressID { get; set; }
         public Address Address { get; set; }
 
         [ForeignKey("WeeklyPickUp")]
-        public int WeeklyPickUpID { get; set; }   
+        public int? WeeklyPickUpID { get; set; }   
         public WeeklyPickUp WeeklyPickUp { get; set; }
 
 

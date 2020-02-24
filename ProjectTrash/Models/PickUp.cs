@@ -20,7 +20,7 @@ namespace ProjectTrash.Models
 
 
         [ForeignKey("Employee")]
-        public int EmployeeID { get; set; }
+        public int? EmployeeID { get; set; }
         public Employee Employee { get; set; }
 
         public bool completed { get; set; }

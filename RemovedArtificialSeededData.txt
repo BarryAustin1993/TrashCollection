@@ -1,47 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using ProjectTrash.Models;
-
-namespace ProjectTrash.Data
-{
-    public class ApplicationDbContext : IdentityDbContext
-    {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
-        public DbSet<Customer>Customers { get; set; }
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<AccountSubscription> AccountSubscriptions { get; set; }
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<WeeklyPickUp> WeeklyPickUps { get; set; }
-        public DbSet<PickUp> PickUps { get; set; }
-        public DbSet<Employee> Employees { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-
-            builder.Entity<IdentityRole>()
-                .HasData(
-                    new IdentityRole
-                    {
-                        Id = "13579 - customer",
-                        Name = "Customer",
-                        NormalizedName = "CUSTOMER"
-                    },
-                    new IdentityRole
-                    {
-                        Id = "02468 - employee",
-                        Name = "Employee",
-                        NormalizedName = "EMPLOYEE"
-                    });
-
-            builder.Entity<IdentityUser>()
+ builder.Entity<IdentityUser>()
                 .HasData(
                     new IdentityUser
                     {
@@ -622,7 +579,3 @@ namespace ProjectTrash.Data
                         RoleId = "02468 - employee",
                         UserId = "12-MTerril",
                     });
-        
-        }
-    }
-}

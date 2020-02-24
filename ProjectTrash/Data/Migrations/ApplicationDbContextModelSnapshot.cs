@@ -15,7 +15,7 @@ namespace ProjectTrash.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -48,17 +48,17 @@ namespace ProjectTrash.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "92deba22-6d37-4747-bc6c-53510dcb1694",
-                            ConcurrencyStamp = "d3ff1369-eaec-4a2a-9106-f1f4aab25c33",
+                            Id = "13579 - customer",
+                            ConcurrencyStamp = "3c7f051b-9afe-498c-801c-eb1f9d802094",
                             Name = "Customer",
-                            NormalizedName = "Customer"
+                            NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-                            Id = "a688b36d-59cb-43f4-b504-bd049b97f7b1",
-                            ConcurrencyStamp = "ecd5e6dd-606b-4097-850c-6700afc0aba4",
+                            Id = "02468 - employee",
+                            ConcurrencyStamp = "5f300375-c417-435c-a77c-5f4ff9a33273",
                             Name = "Employee",
-                            NormalizedName = "Employee"
+                            NormalizedName = "EMPLOYEE"
                         });
                 });
 
@@ -149,6 +149,212 @@ namespace ProjectTrash.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1-Ajpbarry",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "63907637-a7a9-472e-b616-dc8437489f80",
+                            Email = "Ajpbarry@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "AJPBARRY@GMAIL.COM",
+                            NormalizedUserName = "AJPBARRY",
+                            PasswordHash = "password",
+                            PhoneNumber = "4147370256",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "b740c1f5-f9e8-49d9-b6c1-c2340caca1f3",
+                            TwoFactorEnabled = true,
+                            UserName = "Ajpbarry"
+                        },
+                        new
+                        {
+                            Id = "2-ABaird",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d6799870-4f48-40f0-a0fa-45f83385bc04",
+                            Email = "ABaird@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "ABAIRD@GMAIL.COM",
+                            NormalizedUserName = "ABAIRD",
+                            PasswordHash = "password",
+                            PhoneNumber = "4141234567",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "612f33fe-afec-4661-b1a2-00eae5dec7da",
+                            TwoFactorEnabled = true,
+                            UserName = "ABaird"
+                        },
+                        new
+                        {
+                            Id = "3-DSteinhafel",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "bc58742f-d424-41f8-bcb2-9de00689c47c",
+                            Email = "DSteinhafel@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "DSTEINHAFEL@GMAIL.COM",
+                            NormalizedUserName = "DSTEINHAFEL",
+                            PasswordHash = "password",
+                            PhoneNumber = "4149876543",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "8d3272dd-51d7-48af-a412-51f12d9ba6d0",
+                            TwoFactorEnabled = true,
+                            UserName = "DSteinhafel"
+                        },
+                        new
+                        {
+                            Id = "4-MAcker",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c394d82e-466d-4589-a02c-652fc4ef7f49",
+                            Email = "MAcker@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "MACKER@GMAIL.COM",
+                            NormalizedUserName = "MACKER",
+                            PasswordHash = "password",
+                            PhoneNumber = "4142345678",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "9e8e9108-c146-4a8e-aca3-54103b62a6e6",
+                            TwoFactorEnabled = true,
+                            UserName = "MAcker"
+                        },
+                        new
+                        {
+                            Id = "5-RHolman",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "69d01d75-53c7-44d7-b238-41c482d2803f",
+                            Email = "RHolman@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "RHOLMAN@GMAIL.COM",
+                            NormalizedUserName = "RHOLMAN",
+                            PasswordHash = "password",
+                            PhoneNumber = "4144567890",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "1269d76c-1ad7-41ed-8ca9-d434839ec056",
+                            TwoFactorEnabled = true,
+                            UserName = "RHolman"
+                        },
+                        new
+                        {
+                            Id = "6-DTirnanic",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e35b13b7-b72f-4f39-b749-7cda69a0dd60",
+                            Email = "DTirnanic@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "DTIRNANIC@GMAIL.COM",
+                            NormalizedUserName = "DTIRNANIC",
+                            PasswordHash = "password",
+                            PhoneNumber = "4140987654",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "897d329b-524a-4341-b2a9-2862897ebedb",
+                            TwoFactorEnabled = true,
+                            UserName = "DTirnanic"
+                        },
+                        new
+                        {
+                            Id = "7-GSanchez",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0824f673-d958-4abb-b2be-95dd51240ca6",
+                            Email = "GSanchez@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "GSANCHEZ@GMAIL.COM",
+                            NormalizedUserName = "GSANCHEZ",
+                            PasswordHash = "password",
+                            PhoneNumber = "4146853690",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "d19390b9-0740-4beb-af6d-96ccc21bcee7",
+                            TwoFactorEnabled = true,
+                            UserName = "GSanchez"
+                        },
+                        new
+                        {
+                            Id = "8-JBrockman",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c9bbbf18-9625-4726-a169-68c016139229",
+                            Email = "JBrockman@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "JBROCKMAN@GMAIL.COM",
+                            NormalizedUserName = "JBROCKMAN",
+                            PasswordHash = "password",
+                            PhoneNumber = "4148760987",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "d793b092-f4a8-46ff-a5ca-a966f53f3d5c",
+                            TwoFactorEnabled = true,
+                            UserName = "JBrockman"
+                        },
+                        new
+                        {
+                            Id = "9-NSeibel",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "fa06621b-954a-4fb8-a8fe-3e0350501548",
+                            Email = "NSeibel@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "NSEIBEL@GMAIL.COM",
+                            NormalizedUserName = "NSEIBEL",
+                            PasswordHash = "password",
+                            PhoneNumber = "3138760987",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "6303bce4-d0d8-4d41-90f6-9e4b5e438395",
+                            TwoFactorEnabled = true,
+                            UserName = "NSeibel"
+                        },
+                        new
+                        {
+                            Id = "10-DLagrange",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "1cbd6ec6-8710-48e6-80b9-a168c8b36e62",
+                            Email = "DLagrange@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "DLAGRANGE@GMAIL.COM",
+                            NormalizedUserName = "DLAGRANGE",
+                            PasswordHash = "password",
+                            PhoneNumber = "3131234567",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "c0831ca7-3c9d-48a8-8ef4-4a36dd57dcd9",
+                            TwoFactorEnabled = true,
+                            UserName = "DLagrange"
+                        },
+                        new
+                        {
+                            Id = "11-CKIng",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "86d363fe-f783-4953-9569-e074d8f49d33",
+                            Email = "CKIng@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "CKING@GMAIL.COM",
+                            NormalizedUserName = "CKING",
+                            PasswordHash = "password",
+                            PhoneNumber = "3130865432",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "110c335e-72e0-4969-a3f5-6e73dd15eb4c",
+                            TwoFactorEnabled = true,
+                            UserName = "CKIng"
+                        },
+                        new
+                        {
+                            Id = "12-MTerril",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d872cfef-1c06-496b-96aa-65668ecf9285",
+                            Email = "MTerril@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            NormalizedEmail = "MTERRIL@GMAIL.COM",
+                            NormalizedUserName = "MTERRIL",
+                            PasswordHash = "password",
+                            PhoneNumber = "3136853963",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "eab39bc2-40bd-43cd-ad1e-4529066a199e",
+                            TwoFactorEnabled = true,
+                            UserName = "MTerril"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -210,6 +416,68 @@ namespace ProjectTrash.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "1-Ajpbarry",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "2-ABaird",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "3-DSteinhafel",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "4-MAcker",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "5-RHolman",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "6-DTirnanic",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "7-GSanchez",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "8-JBrockman",
+                            RoleId = "13579 - customer"
+                        },
+                        new
+                        {
+                            UserId = "9-NSeibel",
+                            RoleId = "02468 - employee"
+                        },
+                        new
+                        {
+                            UserId = "10-DLangrange",
+                            RoleId = "02468 - employee"
+                        },
+                        new
+                        {
+                            UserId = "11-CKing",
+                            RoleId = "02468 - employee"
+                        },
+                        new
+                        {
+                            UserId = "12-MTerril",
+                            RoleId = "02468 - employee"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -238,13 +506,13 @@ namespace ProjectTrash.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AccountSubscriptionID")
+                    b.Property<int?>("AccountSubscriptionID")
                         .HasColumnType("int");
 
-                    b.Property<int>("AddressID")
+                    b.Property<int?>("AddressID")
                         .HasColumnType("int");
 
-                    b.Property<int>("WeeklyPickUpID")
+                    b.Property<int?>("WeeklyPickUpID")
                         .HasColumnType("int");
 
                     b.Property<double>("balance")
@@ -528,23 +796,23 @@ namespace ProjectTrash.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("AccountID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("accountID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("firstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lastName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("AccountID");
 
-                    b.HasIndex("accountID");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Customers");
 
@@ -552,58 +820,66 @@ namespace ProjectTrash.Data.Migrations
                         new
                         {
                             Id = 1,
-                            accountID = 1,
-                            firstName = "Austin",
-                            lastName = "Barry"
+                            AccountID = 1,
+                            FirstName = "Austin",
+                            LastName = "Barry",
+                            UserId = "1-Ajpbary"
                         },
                         new
                         {
                             Id = 2,
-                            accountID = 2,
-                            firstName = "Andrew",
-                            lastName = "Baird"
+                            AccountID = 2,
+                            FirstName = "Andrew",
+                            LastName = "Baird",
+                            UserId = "2-ABaird"
                         },
                         new
                         {
                             Id = 3,
-                            accountID = 3,
-                            firstName = "David",
-                            lastName = "Steinhafel"
+                            AccountID = 3,
+                            FirstName = "David",
+                            LastName = "Steinhafel",
+                            UserId = "3-DSteinhafel"
                         },
                         new
                         {
                             Id = 4,
-                            accountID = 4,
-                            firstName = "Matthew",
-                            lastName = "Acker"
+                            AccountID = 4,
+                            FirstName = "Matthew",
+                            LastName = "Acker",
+                            UserId = "4-MAcker"
                         },
                         new
                         {
                             Id = 5,
-                            accountID = 5,
-                            firstName = "Ryan",
-                            lastName = "Holman"
+                            AccountID = 5,
+                            FirstName = "Ryan",
+                            LastName = "Holman",
+                            UserId = "5-RHolman"
                         },
                         new
                         {
                             Id = 6,
-                            accountID = 6,
-                            firstName = "Dejan",
-                            lastName = "Tirnanic"
+                            AccountID = 6,
+                            FirstName = "Dejan",
+                            LastName = "Tirnanic",
+                            UserId = "6-DTirnanic"
                         },
                         new
                         {
                             Id = 7,
-                            accountID = 7,
-                            firstName = "Gustavo",
-                            lastName = "Sanchez"
+                            AccountID = 7,
+                            FirstName = "Gustavo",
+                            LastName = "Sanchez",
+                            UserId = "7-GSanchez"
                         },
                         new
                         {
                             Id = 8,
-                            accountID = 8,
-                            firstName = "Jacob",
-                            lastName = "Brockmann"
+                            AccountID = 8,
+                            FirstName = "Jacob",
+                            LastName = "Brockmann",
+                            UserId = "8-JBrockmann"
                         });
                 });
 
@@ -636,6 +912,7 @@ namespace ProjectTrash.Data.Migrations
                         new
                         {
                             ID = 1,
+                            UserId = "9-NSeibel",
                             firstName = "Nevin",
                             lastName = "Seibel",
                             zipcode = 53211
@@ -643,6 +920,7 @@ namespace ProjectTrash.Data.Migrations
                         new
                         {
                             ID = 2,
+                            UserId = "10-DLangrange",
                             firstName = "David",
                             lastName = "Lagrange",
                             zipcode = 53212
@@ -650,6 +928,7 @@ namespace ProjectTrash.Data.Migrations
                         new
                         {
                             ID = 3,
+                            UserId = "11-CKing",
                             firstName = "Charles",
                             lastName = "King",
                             zipcode = 53168
@@ -657,6 +936,7 @@ namespace ProjectTrash.Data.Migrations
                         new
                         {
                             ID = 4,
+                            UserId = "12-MTerril",
                             firstName = "Mike",
                             lastName = "Terril",
                             zipcode = 48088
@@ -673,7 +953,7 @@ namespace ProjectTrash.Data.Migrations
                     b.Property<int>("AccountID")
                         .HasColumnType("int");
 
-                    b.Property<int>("EmployeeID")
+                    b.Property<int?>("EmployeeID")
                         .HasColumnType("int");
 
                     b.Property<bool>("completed")
@@ -798,39 +1078,31 @@ namespace ProjectTrash.Data.Migrations
                 {
                     b.HasOne("ProjectTrash.Models.AccountSubscription", "AccountSubscription")
                         .WithMany()
-                        .HasForeignKey("AccountSubscriptionID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AccountSubscriptionID");
 
                     b.HasOne("ProjectTrash.Models.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AddressID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AddressID");
 
                     b.HasOne("ProjectTrash.Models.WeeklyPickUp", "WeeklyPickUp")
                         .WithMany()
-                        .HasForeignKey("WeeklyPickUpID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("WeeklyPickUpID");
                 });
 
             modelBuilder.Entity("ProjectTrash.Models.Customer", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "ApplicationUser")
+                    b.HasOne("ProjectTrash.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountID");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "IdentityUser")
                         .WithMany()
                         .HasForeignKey("UserId");
-
-                    b.HasOne("ProjectTrash.Models.Account", "account")
-                        .WithMany()
-                        .HasForeignKey("accountID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProjectTrash.Models.Employee", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "ApplicationUser")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "IdentityUser")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });
@@ -845,9 +1117,7 @@ namespace ProjectTrash.Data.Migrations
 
                     b.HasOne("ProjectTrash.Models.Employee", "Employee")
                         .WithMany()
-                        .HasForeignKey("EmployeeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EmployeeID");
                 });
 #pragma warning restore 612, 618
         }

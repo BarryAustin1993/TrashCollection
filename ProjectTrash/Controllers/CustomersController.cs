@@ -22,7 +22,7 @@ namespace ProjectTrash.Controllers
         // GET: Customers
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Customers.Include(c => c.ApplicationUser).Include(c => c.account);
+            var applicationDbContext = _context.Customers.Include(c => c.IdentityUser).Include(c => c.Account);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,8 +35,8 @@ namespace ProjectTrash.Controllers
             }
 
             var customer = await _context.Customers
-                .Include(c => c.ApplicationUser)
-                .Include(c => c.account)
+                .Include(c => c.IdentityUser)
+                .Include(c => c.Account)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (customer == null)
             {
@@ -51,7 +51,17 @@ namespace ProjectTrash.Controllers
         {
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             ViewData["accountID"] = new SelectList(_context.Accounts, "ID", "ID");
-            return View();
+
+            Customer customer = new Customer()
+            {
+                Account = new Account()
+                {
+                    Address = new Address(),
+                    AccountSubscription = new AccountSubscription(),
+                    WeeklyPickUp = new WeeklyPickUp()
+                }
+            };
+            return View(customer);
         }
 
         // POST: Customers/Create
@@ -68,7 +78,7 @@ namespace ProjectTrash.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", customer.UserId);
-            ViewData["accountID"] = new SelectList(_context.Accounts, "ID", "ID", customer.accountID);
+            ViewData["accountID"] = new SelectList(_context.Accounts, "ID", "ID", customer.AccountID);
             return View(customer);
         }
 
@@ -86,7 +96,7 @@ namespace ProjectTrash.Controllers
                 return NotFound();
             }
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", customer.UserId);
-            ViewData["accountID"] = new SelectList(_context.Accounts, "ID", "ID", customer.accountID);
+            ViewData["accountID"] = new SelectList(_context.Accounts, "ID", "ID", customer.AccountID);
             return View(customer);
         }
 
@@ -123,7 +133,7 @@ namespace ProjectTrash.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", customer.UserId);
-            ViewData["accountID"] = new SelectList(_context.Accounts, "ID", "ID", customer.accountID);
+            ViewData["accountID"] = new SelectList(_context.Accounts, "ID", "ID", customer.AccountID);
             return View(customer);
         }
 
@@ -136,8 +146,8 @@ namespace ProjectTrash.Controllers
             }
 
             var customer = await _context.Customers
-                .Include(c => c.ApplicationUser)
-                .Include(c => c.account)
+                .Include(c => c.IdentityUser)
+                .Include(c => c.Account)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (customer == null)
             {

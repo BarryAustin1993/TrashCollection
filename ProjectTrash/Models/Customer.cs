@@ -17,13 +17,13 @@ namespace ProjectTrash.Models
         public string UserId { get; set; }
         public IdentityUser IdentityUser { get; set; }
 
-        [ForeignKey("account")]
-        public int accountID { get; set; }
-        public Account account { get; set; }
+        [ForeignKey("Account")]
+        public int? AccountID { get; set; }
+        public Account Account { get; set; }
 
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
 
-        public string lastName { get; set; }
+        public string LastName { get; set; }
     }
 
 }
