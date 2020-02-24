@@ -9,9 +9,8 @@ namespace ProjectTrash.Models
 {
     public class WeeklyPickUp
     {
-        [Key, ForeignKey("Account")]
+        [Key]
         public int WeeklyPickUpId { get; set; }
-        public Account Account { get; set; }
 
         public string DayOfTheWeek { get; set; }
     }

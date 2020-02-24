@@ -17,5 +17,9 @@ namespace ProjectTrash.Models
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
         public Customer customer { get; set; }
+
+        [ForeignKey("WeeklyPickUp")]
+        public int WeeklyPickUpId { get; set; }
+        public WeeklyPickUp WeeklyPickUp { get; set; }
     }
 }

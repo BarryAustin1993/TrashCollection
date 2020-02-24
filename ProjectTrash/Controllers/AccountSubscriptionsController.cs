@@ -22,7 +22,8 @@ namespace ProjectTrash.Controllers
         // GET: AccountSubscriptions
         public async Task<IActionResult> Index()
         {
-            return View(await _context.AccountSubscriptions.ToListAsync());
+            var applicationDbContext = _context.AccountSubscriptions.Include(a => a.Account);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: AccountSubscriptions/Details/5
@@ -34,7 +35,8 @@ namespace ProjectTrash.Controllers
             }
 
             var accountSubscription = await _context.AccountSubscriptions
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(a => a.Account)
+                .FirstOrDefaultAsync(m => m.AccountSubscritionId == id);
             if (accountSubscription == null)
             {
                 return NotFound();
@@ -46,6 +48,7 @@ namespace ProjectTrash.Controllers
         // GET: AccountSubscriptions/Create
         public IActionResult Create()
         {
+            ViewData["AccountSubscritionId"] = new SelectList(_context.Accounts, "AccountID", "AccountID");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,isActive,isSuspended,accountStartDate,accountEndDate,suspensionStartDate,suspensionEndDate")] AccountSubscription accountSubscription)
+        public async Task<IActionResult> Create([Bind("AccountSubscritionId,IsActive,IsSuspended,AccountStartDate,AccountEndDate,SuspensionStartDate,SuspensionEndDate")] AccountSubscription accountSubscription)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace ProjectTrash.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AccountSubscritionId"] = new SelectList(_context.Accounts, "AccountID", "AccountID", accountSubscription.AccountSubscritionId);
             return View(accountSubscription);
         }
 
@@ -78,6 +82,7 @@ namespace ProjectTrash.Controllers
             {
                 return NotFound();
             }
+            ViewData["AccountSubscritionId"] = new SelectList(_context.Accounts, "AccountID", "AccountID", accountSubscription.AccountSubscritionId);
             return View(accountSubscription);
         }
 
@@ -86,9 +91,9 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,isActive,isSuspended,accountStartDate,accountEndDate,suspensionStartDate,suspensionEndDate")] AccountSubscription accountSubscription)
+        public async Task<IActionResult> Edit(int id, [Bind("AccountSubscritionId,IsActive,IsSuspended,AccountStartDate,AccountEndDate,SuspensionStartDate,SuspensionEndDate")] AccountSubscription accountSubscription)
         {
-            if (id != accountSubscription.Id)
+            if (id != accountSubscription.AccountSubscritionId)
             {
                 return NotFound();
             }
@@ -102,7 +107,7 @@ namespace ProjectTrash.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AccountSubscriptionExists(accountSubscription.Id))
+                    if (!AccountSubscriptionExists(accountSubscription.AccountSubscritionId))
                     {
                         return NotFound();
                     }
@@ -113,6 +118,7 @@ namespace ProjectTrash.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AccountSubscritionId"] = new SelectList(_context.Accounts, "AccountID", "AccountID", accountSubscription.AccountSubscritionId);
             return View(accountSubscription);
         }
 
@@ -125,7 +131,8 @@ namespace ProjectTrash.Controllers
             }
 
             var accountSubscription = await _context.AccountSubscriptions
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(a => a.Account)
+                .FirstOrDefaultAsync(m => m.AccountSubscritionId == id);
             if (accountSubscription == null)
             {
                 return NotFound();
@@ -147,7 +154,7 @@ namespace ProjectTrash.Controllers
 
         private bool AccountSubscriptionExists(int id)
         {
-            return _context.AccountSubscriptions.Any(e => e.Id == id);
+            return _context.AccountSubscriptions.Any(e => e.AccountSubscritionId == id);
         }
     }
 }

@@ -12,32 +12,26 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.balance)
+            @Html.DisplayNameFor(model => model.Balance)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.balance)
+            @Html.DisplayFor(model => model.Balance)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AccountSubscription)
+            @Html.DisplayNameFor(model => model.customer)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AccountSubscription.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address.ID)
+            @Html.DisplayFor(model => model.customer.CustomerId)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.WeeklyPickUp)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WeeklyPickUp.ID)
+            @Html.DisplayFor(model => model.WeeklyPickUp.WeeklyPickUpId)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.AccountID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

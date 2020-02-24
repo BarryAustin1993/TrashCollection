@@ -14,7 +14,6 @@ namespace ProjectTrash.Data
             : base(options)
         {
         }
-        
         public DbSet<Customer>Customers { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<AccountSubscription> AccountSubscriptions { get; set; }

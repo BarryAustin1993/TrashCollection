@@ -22,7 +22,7 @@ namespace ProjectTrash.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Accounts.Include(a => a.AccountSubscription).Include(a => a.Address).Include(a => a.WeeklyPickUp);
+            var applicationDbContext = _context.Accounts.Include(a => a.WeeklyPickUp).Include(a => a.customer);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,10 +35,9 @@ namespace ProjectTrash.Controllers
             }
 
             var account = await _context.Accounts
-                .Include(a => a.AccountSubscription)
-                .Include(a => a.Address)
                 .Include(a => a.WeeklyPickUp)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .Include(a => a.customer)
+                .FirstOrDefaultAsync(m => m.AccountID == id);
             if (account == null)
             {
                 return NotFound();
@@ -50,9 +49,8 @@ namespace ProjectTrash.Controllers
         // GET: Accounts/Create
         public IActionResult Create()
         {
-            ViewData["AccountSubscriptionID"] = new SelectList(_context.AccountSubscriptions, "Id", "Id");
-            ViewData["AddressID"] = new SelectList(_context.Addresses, "ID", "ID");
-            ViewData["WeeklyPickUpID"] = new SelectList(_context.WeeklyPickUps, "ID", "ID");
+            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId");
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId");
             return View();
         }
 
@@ -61,7 +59,7 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,balance,AccountSubscriptionID,AddressID,WeeklyPickUpID")] Account account)
+        public async Task<IActionResult> Create([Bind("AccountID,Balance,CustomerId,WeeklyPickUpId")] Account account)
         {
             if (ModelState.IsValid)
             {
@@ -69,9 +67,8 @@ namespace ProjectTrash.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AccountSubscriptionID"] = new SelectList(_context.AccountSubscriptions, "Id", "Id", account.AccountSubscriptionID);
-            ViewData["AddressID"] = new SelectList(_context.Addresses, "ID", "ID", account.AddressID);
-            ViewData["WeeklyPickUpID"] = new SelectList(_context.WeeklyPickUps, "ID", "ID", account.WeeklyPickUpID);
+            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId", account.WeeklyPickUpId);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", account.CustomerId);
             return View(account);
         }
 
@@ -88,9 +85,8 @@ namespace ProjectTrash.Controllers
             {
                 return NotFound();
             }
-            ViewData["AccountSubscriptionID"] = new SelectList(_context.AccountSubscriptions, "Id", "Id", account.AccountSubscriptionID);
-            ViewData["AddressID"] = new SelectList(_context.Addresses, "ID", "ID", account.AddressID);
-            ViewData["WeeklyPickUpID"] = new SelectList(_context.WeeklyPickUps, "ID", "ID", account.WeeklyPickUpID);
+            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId", account.WeeklyPickUpId);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", account.CustomerId);
             return View(account);
         }
 
@@ -99,9 +95,9 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,balance,AccountSubscriptionID,AddressID,WeeklyPickUpID")] Account account)
+        public async Task<IActionResult> Edit(int id, [Bind("AccountID,Balance,CustomerId,WeeklyPickUpId")] Account account)
         {
-            if (id != account.ID)
+            if (id != account.AccountID)
             {
                 return NotFound();
             }
@@ -115,7 +111,7 @@ namespace ProjectTrash.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AccountExists(account.ID))
+                    if (!AccountExists(account.AccountID))
                     {
                         return NotFound();
                     }
@@ -126,9 +122,8 @@ namespace ProjectTrash.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AccountSubscriptionID"] = new SelectList(_context.AccountSubscriptions, "Id", "Id", account.AccountSubscriptionID);
-            ViewData["AddressID"] = new SelectList(_context.Addresses, "ID", "ID", account.AddressID);
-            ViewData["WeeklyPickUpID"] = new SelectList(_context.WeeklyPickUps, "ID", "ID", account.WeeklyPickUpID);
+            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId", account.WeeklyPickUpId);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", account.CustomerId);
             return View(account);
         }
 
@@ -141,10 +136,9 @@ namespace ProjectTrash.Controllers
             }
 
             var account = await _context.Accounts
-                .Include(a => a.AccountSubscription)
-                .Include(a => a.Address)
                 .Include(a => a.WeeklyPickUp)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .Include(a => a.customer)
+                .FirstOrDefaultAsync(m => m.AccountID == id);
             if (account == null)
             {
                 return NotFound();
@@ -166,7 +160,7 @@ namespace ProjectTrash.Controllers
 
         private bool AccountExists(int id)
         {
-            return _context.Accounts.Any(e => e.ID == id);
+            return _context.Accounts.Any(e => e.AccountID == id);
         }
     }
 }

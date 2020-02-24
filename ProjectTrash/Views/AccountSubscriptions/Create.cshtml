@@ -13,35 +13,39 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AccountSubscritionId" class="control-label"></label>
+                <select asp-for="AccountSubscritionId" class ="form-control" asp-items="ViewBag.AccountSubscritionId"></select>
+            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="isActive" /> @Html.DisplayNameFor(model => model.isActive)
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="isSuspended" /> @Html.DisplayNameFor(model => model.isSuspended)
+                    <input class="form-check-input" asp-for="IsSuspended" /> @Html.DisplayNameFor(model => model.IsSuspended)
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="accountStartDate" class="control-label"></label>
-                <input asp-for="accountStartDate" class="form-control" />
-                <span asp-validation-for="accountStartDate" class="text-danger"></span>
+                <label asp-for="AccountStartDate" class="control-label"></label>
+                <input asp-for="AccountStartDate" class="form-control" />
+                <span asp-validation-for="AccountStartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="accountEndDate" class="control-label"></label>
-                <input asp-for="accountEndDate" class="form-control" />
-                <span asp-validation-for="accountEndDate" class="text-danger"></span>
+                <label asp-for="AccountEndDate" class="control-label"></label>
+                <input asp-for="AccountEndDate" class="form-control" />
+                <span asp-validation-for="AccountEndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="suspensionStartDate" class="control-label"></label>
-                <input asp-for="suspensionStartDate" class="form-control" />
-                <span asp-validation-for="suspensionStartDate" class="text-danger"></span>
+                <label asp-for="SuspensionStartDate" class="control-label"></label>
+                <input asp-for="SuspensionStartDate" class="form-control" />
+                <span asp-validation-for="SuspensionStartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="suspensionEndDate" class="control-label"></label>
-                <input asp-for="suspensionEndDate" class="form-control" />
-                <span asp-validation-for="suspensionEndDate" class="text-danger"></span>
+                <label asp-for="SuspensionEndDate" class="control-label"></label>
+                <input asp-for="SuspensionEndDate" class="form-control" />
+                <span asp-validation-for="SuspensionEndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

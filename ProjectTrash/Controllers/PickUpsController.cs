@@ -37,7 +37,7 @@ namespace ProjectTrash.Controllers
             var pickUp = await _context.PickUps
                 .Include(p => p.Account)
                 .Include(p => p.Employee)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.PickUpID == id);
             if (pickUp == null)
             {
                 return NotFound();
@@ -49,8 +49,8 @@ namespace ProjectTrash.Controllers
         // GET: PickUps/Create
         public IActionResult Create()
         {
-            ViewData["AccountID"] = new SelectList(_context.Accounts, "ID", "ID");
-            ViewData["EmployeeID"] = new SelectList(_context.Employees, "ID", "ID");
+            ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID");
+            ViewData["EmployeeID"] = new SelectList(_context.Employees, "EmployeeID", "EmployeeID");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,AccountID,pickUpDate,EmployeeID,completed")] PickUp pickUp)
+        public async Task<IActionResult> Create([Bind("PickUpID,AccountID,PickUpDate,EmployeeID,Completed")] PickUp pickUp)
         {
             if (ModelState.IsValid)
             {
@@ -67,8 +67,8 @@ namespace ProjectTrash.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AccountID"] = new SelectList(_context.Accounts, "ID", "ID", pickUp.AccountID);
-            ViewData["EmployeeID"] = new SelectList(_context.Employees, "ID", "ID", pickUp.EmployeeID);
+            ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID", pickUp.AccountID);
+            ViewData["EmployeeID"] = new SelectList(_context.Employees, "EmployeeID", "EmployeeID", pickUp.EmployeeID);
             return View(pickUp);
         }
 
@@ -85,8 +85,8 @@ namespace ProjectTrash.Controllers
             {
                 return NotFound();
             }
-            ViewData["AccountID"] = new SelectList(_context.Accounts, "ID", "ID", pickUp.AccountID);
-            ViewData["EmployeeID"] = new SelectList(_context.Employees, "ID", "ID", pickUp.EmployeeID);
+            ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID", pickUp.AccountID);
+            ViewData["EmployeeID"] = new SelectList(_context.Employees, "EmployeeID", "EmployeeID", pickUp.EmployeeID);
             return View(pickUp);
         }
 
@@ -95,9 +95,9 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,AccountID,pickUpDate,EmployeeID,completed")] PickUp pickUp)
+        public async Task<IActionResult> Edit(int id, [Bind("PickUpID,AccountID,PickUpDate,EmployeeID,Completed")] PickUp pickUp)
         {
-            if (id != pickUp.ID)
+            if (id != pickUp.PickUpID)
             {
                 return NotFound();
             }
@@ -111,7 +111,7 @@ namespace ProjectTrash.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PickUpExists(pickUp.ID))
+                    if (!PickUpExists(pickUp.PickUpID))
                     {
                         return NotFound();
                     }
@@ -122,8 +122,8 @@ namespace ProjectTrash.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AccountID"] = new SelectList(_context.Accounts, "ID", "ID", pickUp.AccountID);
-            ViewData["EmployeeID"] = new SelectList(_context.Employees, "ID", "ID", pickUp.EmployeeID);
+            ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID", pickUp.AccountID);
+            ViewData["EmployeeID"] = new SelectList(_context.Employees, "EmployeeID", "EmployeeID", pickUp.EmployeeID);
             return View(pickUp);
         }
 
@@ -138,7 +138,7 @@ namespace ProjectTrash.Controllers
             var pickUp = await _context.PickUps
                 .Include(p => p.Account)
                 .Include(p => p.Employee)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.PickUpID == id);
             if (pickUp == null)
             {
                 return NotFound();
@@ -160,7 +160,7 @@ namespace ProjectTrash.Controllers
 
         private bool PickUpExists(int id)
         {
-            return _context.PickUps.Any(e => e.ID == id);
+            return _context.PickUps.Any(e => e.PickUpID == id);
         }
     }
 }

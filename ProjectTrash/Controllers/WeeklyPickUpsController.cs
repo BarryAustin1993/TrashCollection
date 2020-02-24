@@ -10,23 +10,22 @@ using ProjectTrash.Models;
 
 namespace ProjectTrash.Controllers
 {
-    public class AddressesController : Controller
+    public class WeeklyPickUpsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public AddressesController(ApplicationDbContext context)
+        public WeeklyPickUpsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Addresses
+        // GET: WeeklyPickUps
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Addresses.Include(a => a.Account);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.WeeklyPickUps.ToListAsync());
         }
 
-        // GET: Addresses/Details/5
+        // GET: WeeklyPickUps/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace ProjectTrash.Controllers
                 return NotFound();
             }
 
-            var address = await _context.Addresses
-                .Include(a => a.Account)
-                .FirstOrDefaultAsync(m => m.AddressId == id);
-            if (address == null)
+            var weeklyPickUp = await _context.WeeklyPickUps
+                .FirstOrDefaultAsync(m => m.WeeklyPickUpId == id);
+            if (weeklyPickUp == null)
             {
                 return NotFound();
             }
 
-            return View(address);
+            return View(weeklyPickUp);
         }
 
-        // GET: Addresses/Create
+        // GET: WeeklyPickUps/Create
         public IActionResult Create()
         {
-            ViewData["AddressId"] = new SelectList(_context.Accounts, "AccountID", "AccountID");
             return View();
         }
 
-        // POST: Addresses/Create
+        // POST: WeeklyPickUps/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AddressId,StreetAddress,City,State,ZipCode")] Address address)
+        public async Task<IActionResult> Create([Bind("WeeklyPickUpId,DayOfTheWeek")] WeeklyPickUp weeklyPickUp)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(address);
+                _context.Add(weeklyPickUp);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AddressId"] = new SelectList(_context.Accounts, "AccountID", "AccountID", address.AddressId);
-            return View(address);
+            return View(weeklyPickUp);
         }
 
-        // GET: Addresses/Edit/5
+        // GET: WeeklyPickUps/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace ProjectTrash.Controllers
                 return NotFound();
             }
 
-            var address = await _context.Addresses.FindAsync(id);
-            if (address == null)
+            var weeklyPickUp = await _context.WeeklyPickUps.FindAsync(id);
+            if (weeklyPickUp == null)
             {
                 return NotFound();
             }
-            ViewData["AddressId"] = new SelectList(_context.Accounts, "AccountID", "AccountID", address.AddressId);
-            return View(address);
+            return View(weeklyPickUp);
         }
 
-        // POST: Addresses/Edit/5
+        // POST: WeeklyPickUps/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AddressId,StreetAddress,City,State,ZipCode")] Address address)
+        public async Task<IActionResult> Edit(int id, [Bind("WeeklyPickUpId,DayOfTheWeek")] WeeklyPickUp weeklyPickUp)
         {
-            if (id != address.AddressId)
+            if (id != weeklyPickUp.WeeklyPickUpId)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace ProjectTrash.Controllers
             {
                 try
                 {
-                    _context.Update(address);
+                    _context.Update(weeklyPickUp);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AddressExists(address.AddressId))
+                    if (!WeeklyPickUpExists(weeklyPickUp.WeeklyPickUpId))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace ProjectTrash.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AddressId"] = new SelectList(_context.Accounts, "AccountID", "AccountID", address.AddressId);
-            return View(address);
+            return View(weeklyPickUp);
         }
 
-        // GET: Addresses/Delete/5
+        // GET: WeeklyPickUps/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace ProjectTrash.Controllers
                 return NotFound();
             }
 
-            var address = await _context.Addresses
-                .Include(a => a.Account)
-                .FirstOrDefaultAsync(m => m.AddressId == id);
-            if (address == null)
+            var weeklyPickUp = await _context.WeeklyPickUps
+                .FirstOrDefaultAsync(m => m.WeeklyPickUpId == id);
+            if (weeklyPickUp == null)
             {
                 return NotFound();
             }
 
-            return View(address);
+            return View(weeklyPickUp);
         }
 
-        // POST: Addresses/Delete/5
+        // POST: WeeklyPickUps/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var address = await _context.Addresses.FindAsync(id);
-            _context.Addresses.Remove(address);
+            var weeklyPickUp = await _context.WeeklyPickUps.FindAsync(id);
+            _context.WeeklyPickUps.Remove(weeklyPickUp);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AddressExists(int id)
+        private bool WeeklyPickUpExists(int id)
         {
-            return _context.Addresses.Any(e => e.AddressId == id);
+            return _context.WeeklyPickUps.Any(e => e.WeeklyPickUpId == id);
         }
     }
 }

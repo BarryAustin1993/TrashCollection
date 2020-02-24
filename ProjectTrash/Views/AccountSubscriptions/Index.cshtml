@@ -14,22 +14,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.isActive)
+                @Html.DisplayNameFor(model => model.Account)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.isSuspended)
+                @Html.DisplayNameFor(model => model.IsActive)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.accountStartDate)
+                @Html.DisplayNameFor(model => model.IsSuspended)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.accountEndDate)
+                @Html.DisplayNameFor(model => model.AccountStartDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.suspensionStartDate)
+                @Html.DisplayNameFor(model => model.AccountEndDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.suspensionEndDate)
+                @Html.DisplayNameFor(model => model.SuspensionStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SuspensionEndDate)
             </th>
             <th></th>
         </tr>
@@ -38,27 +41,30 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.isActive)
+                @Html.DisplayFor(modelItem => item.Account.AccountID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.isSuspended)
+                @Html.DisplayFor(modelItem => item.IsActive)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.accountStartDate)
+                @Html.DisplayFor(modelItem => item.IsSuspended)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.accountEndDate)
+                @Html.DisplayFor(modelItem => item.AccountStartDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.suspensionStartDate)
+                @Html.DisplayFor(modelItem => item.AccountEndDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.suspensionEndDate)
+                @Html.DisplayFor(modelItem => item.SuspensionStartDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.SuspensionEndDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AccountSubscritionId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AccountSubscritionId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AccountSubscritionId">Delete</a>
             </td>
         </tr>
 }

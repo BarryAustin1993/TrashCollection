@@ -13,55 +13,25 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
-                    <label asp-for="UserId" class="control-label"></label>
-                    <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
-                </div>
-                <div class="form-group">
-                    <label asp-for="accountID" class="control-label"></label>
-                    <select asp-for="accountID" class ="form-control" asp-items="ViewBag.accountID"></select>
-                </div>*@
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label">First Name</label>
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label">Last Name</label>
+                <label asp-for="LastName" class="control-label"></label>
                 <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Account.Address.address" class="control-label">Street Address</label>
-                <input asp-for="Account.Address.address" class="form-control" />
-                <span asp-validation-for="Account.Address.address" class="text-danger"></span>
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            <div class="form-group">
-                <label asp-for="Account.Address.city" class="control-label">City</label>
-                <input asp-for="Account.Address.city" class="form-control" />
-                <span asp-validation-for="Account.Address.city" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Account.Address.state" class="control-label">State</label>
-                <input asp-for="Account.Address.state" class="form-control" />
-                <span asp-validation-for="Account.Address.state" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Account.Address.zipCode" class="control-label">Zip Code</label>
-                <input asp-for="Account.Address.zipCode" class="form-control" />
-                <span asp-validation-for="Account.Address.zipCode" class="text-danger"></span>
-            </div>
-            @*<div class ="form-group">
-                <label asp-for ="Account.WeeklyPickUp"></label>
-                <select asp-for ="Account.WeeklyPickUp" class="form-control" asp-items="@Model.Account.WeeklyPickUp.dayOfTheWeek"></select>
-                <span asp-validation-for = "Account.WeeklyPickUp" class="text-danger">
-                    </span>
-            </div>*@
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
+        </form>
     </div>
-    </form>
-</div>
 </div>
 
 <div>

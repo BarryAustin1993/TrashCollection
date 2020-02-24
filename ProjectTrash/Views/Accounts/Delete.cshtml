@@ -13,33 +13,27 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.balance)
+            @Html.DisplayNameFor(model => model.Balance)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.balance)
+            @Html.DisplayFor(model => model.Balance)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AccountSubscription)
+            @Html.DisplayNameFor(model => model.customer)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AccountSubscription.Id)
-        </dd class>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address.ID)
+            @Html.DisplayFor(model => model.customer.CustomerId)
         </dd class>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.WeeklyPickUp)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WeeklyPickUp.ID)
+            @Html.DisplayFor(model => model.WeeklyPickUp.WeeklyPickUpId)
         </dd class>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="ID" />
+        <input type="hidden" asp-for="AccountID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

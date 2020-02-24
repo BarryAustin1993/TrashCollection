@@ -10,6 +10,11 @@ namespace ProjectTrash.Models
 {
     public class Customer
     {
+        public Customer()
+        {
+            this.Accounts = new HashSet<Account>();
+        }
+
         [Key]
         public int CustomerId { get; set; }
 
@@ -20,6 +25,8 @@ namespace ProjectTrash.Models
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public virtual ICollection<Account> Accounts { get; set; }
     }
 
 }

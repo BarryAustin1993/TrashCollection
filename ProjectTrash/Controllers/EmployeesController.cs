@@ -36,7 +36,7 @@ namespace ProjectTrash.Controllers
 
             var employee = await _context.Employees
                 .Include(e => e.IdentityUser)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.EmployeeID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -57,7 +57,7 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,UserId,firstName,lastName,zipcode")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeID,UserId,FirstName,LastName,ZipCode")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -91,9 +91,9 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,UserId,firstName,lastName,zipcode")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeID,UserId,FirstName,LastName,ZipCode")] Employee employee)
         {
-            if (id != employee.ID)
+            if (id != employee.EmployeeID)
             {
                 return NotFound();
             }
@@ -107,7 +107,7 @@ namespace ProjectTrash.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.ID))
+                    if (!EmployeeExists(employee.EmployeeID))
                     {
                         return NotFound();
                     }
@@ -132,7 +132,7 @@ namespace ProjectTrash.Controllers
 
             var employee = await _context.Employees
                 .Include(e => e.IdentityUser)
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.EmployeeID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -154,7 +154,7 @@ namespace ProjectTrash.Controllers
 
         private bool EmployeeExists(int id)
         {
-            return _context.Employees.Any(e => e.ID == id);
+            return _context.Employees.Any(e => e.EmployeeID == id);
         }
     }
 }
