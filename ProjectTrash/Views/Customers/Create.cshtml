@@ -1,0 +1,65 @@
+﻿@model ProjectTrash.Models.Customer
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Address.StreetAddress" class="control-label">Street Address</label>
+                <input asp-for="Account.Address.StreetAddress" class="form-control" />
+                <span asp-validation-for="Account.Address.StreetAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Address.City" class="control-label">City</label>
+                <input asp-for="Account.Address.City" class="form-control" />
+                <span asp-validation-for="Account.Address.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Address.State" class="control-label">State</label>
+                <input asp-for="Account.Address.State" class="form-control" />
+                <span asp-validation-for="Account.Address.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Address.ZipCode" class="control-label">Zip Code</label>
+                <input asp-for="Account.Address.ZipCode" class="form-control" />
+                <span asp-validation-for="Account.Address.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.WeeklyPickUp.DayOfTheWeek"> </label>
+                <select asp-for="Account.WeeklyPickUp.DayOfTheWeek" class="form-control" asp-items="@DayOfWeek"> </select>
+                <span asp-validation-for="Account.WeeklyPickUp.DayOfTheWeek" class="text-danger"> </span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

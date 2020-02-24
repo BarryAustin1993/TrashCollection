@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,5 +14,6 @@ namespace ProjectTrash.Models
         public int WeeklyPickUpId { get; set; }
 
         public string DayOfTheWeek { get; set; }
+        
     }
 }
