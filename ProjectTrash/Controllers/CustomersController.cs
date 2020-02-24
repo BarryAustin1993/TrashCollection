@@ -47,24 +47,22 @@ namespace ProjectTrash.Controllers
 
         // GET: Customers/Create
         public IActionResult Create()
-        {
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
-
+        {         
             Customer customer = new Customer()
-            {
+            {  
                 Account = new Account()
                 {
+                    Balance = 25,
                     Address = new Address(),
                     AccountSubscription = new AccountSubscription()
                     { 
                         IsSuspended = false,
                         IsActive = true,
                         AccountStartDate = DateTime.Now
-                    },                    
-                    Balance = 25,
-                    
+                    }                    
                 }
             };
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return View (customer);
         }
 
