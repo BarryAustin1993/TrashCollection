@@ -49,14 +49,20 @@ namespace ProjectTrash.Controllers
         public IActionResult Create()
         {
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
-            
+
             Customer customer = new Customer()
             {
                 Account = new Account()
                 {
                     Address = new Address(),
-                    AccountSubscription = new AccountSubscription(),
-                    WeeklyPickUp = new WeeklyPickUp()
+                    AccountSubscription = new AccountSubscription()
+                    { 
+                        IsSuspended = false,
+                        IsActive = true,
+                        AccountStartDate = DateTime.Now
+                    },                    
+                    Balance = 25,
+                    
                 }
             };
             return View (customer);
@@ -67,7 +73,7 @@ namespace ProjectTrash.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,UserId,FirstName,LastName")] Customer customer)
+        public async Task<IActionResult> Create(Customer customer)
         {
             if (ModelState.IsValid)
             {

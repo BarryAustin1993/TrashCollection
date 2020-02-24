@@ -22,7 +22,7 @@ namespace ProjectTrash.Controllers
         // GET: Accounts
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Accounts.Include(a => a.WeeklyPickUp).Include(a => a.customer);
+            var applicationDbContext = _context.Accounts.Include(a => a.customer);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,6 @@ namespace ProjectTrash.Controllers
             }
 
             var account = await _context.Accounts
-                .Include(a => a.WeeklyPickUp)
                 .Include(a => a.customer)
                 .FirstOrDefaultAsync(m => m.AccountID == id);
             if (account == null)
@@ -49,7 +48,6 @@ namespace ProjectTrash.Controllers
         // GET: Accounts/Create
         public IActionResult Create()
         {
-            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId");
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId");
             return View();
         }
@@ -67,7 +65,6 @@ namespace ProjectTrash.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId", account.WeeklyPickUpId);
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", account.CustomerId);
             return View(account);
         }
@@ -84,8 +81,7 @@ namespace ProjectTrash.Controllers
             if (account == null)
             {
                 return NotFound();
-            }
-            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId", account.WeeklyPickUpId);
+            }   
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", account.CustomerId);
             return View(account);
         }
@@ -122,7 +118,6 @@ namespace ProjectTrash.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["WeeklyPickUpId"] = new SelectList(_context.WeeklyPickUps, "WeeklyPickUpId", "WeeklyPickUpId", account.WeeklyPickUpId);
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerId", account.CustomerId);
             return View(account);
         }
@@ -136,7 +131,6 @@ namespace ProjectTrash.Controllers
             }
 
             var account = await _context.Accounts
-                .Include(a => a.WeeklyPickUp)
                 .Include(a => a.customer)
                 .FirstOrDefaultAsync(m => m.AccountID == id);
             if (account == null)

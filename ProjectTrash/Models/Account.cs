@@ -25,15 +25,14 @@ namespace ProjectTrash.Models
 
         public virtual AccountSubscription AccountSubscription { get; set; }
 
+        public DayOfWeek PickUpDay { get; set; }
+
         public virtual Address Address { get; set; }
 
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
         public Customer customer { get; set; }
 
-        [ForeignKey("WeeklyPickUp")]
-        public int WeeklyPickUpId { get; set; }
-        public WeeklyPickUp WeeklyPickUp { get; set; }
 
 
     }

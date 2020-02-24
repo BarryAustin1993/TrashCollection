@@ -18,7 +18,6 @@ namespace ProjectTrash.Data
         public DbSet<Account> Accounts { get; set; }
         public DbSet<AccountSubscription> AccountSubscriptions { get; set; }
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<WeeklyPickUp> WeeklyPickUps { get; set; }
         public DbSet<PickUp> PickUps { get; set; }
         public DbSet<Employee> Employees { get; set; }
 
@@ -38,43 +37,6 @@ namespace ProjectTrash.Data
                         Name = "Employee",
                         NormalizedName = "EMPLOYEE"
                     });
-            builder.Entity<WeeklyPickUp>()
-               .HasData(
-                   new WeeklyPickUp
-                   {
-                       WeeklyPickUpId = 1,
-                       DayOfTheWeek = "Monday"
-                   },
-                   new WeeklyPickUp
-                   {
-                       WeeklyPickUpId = 2,
-                       DayOfTheWeek = "Tuesday"
-                   },
-                   new WeeklyPickUp
-                   {
-                       WeeklyPickUpId = 3,
-                       DayOfTheWeek = "Wednesday"
-                   },
-                   new WeeklyPickUp
-                   {
-                       WeeklyPickUpId = 4,
-                       DayOfTheWeek = "Thursday"
-                   },
-                   new WeeklyPickUp
-                   {
-                       WeeklyPickUpId = 5,
-                       DayOfTheWeek = "Friday"
-                   },
-                   new WeeklyPickUp
-                   {
-                       WeeklyPickUpId = 6,
-                       DayOfTheWeek = "Saturday"
-                   },
-                   new WeeklyPickUp
-                   {
-                       WeeklyPickUpId = 7,
-                       DayOfTheWeek = "Sunday"
-                   });
         }
     }
 }
