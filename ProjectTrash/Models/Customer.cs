@@ -12,7 +12,7 @@ namespace ProjectTrash.Models
     {
         public Customer()
         {
-            this.Accounts = new HashSet<Account>();
+            this.Account = new Account();
         }
 
         [Key]
@@ -26,7 +26,7 @@ namespace ProjectTrash.Models
 
         public string LastName { get; set; }
 
-        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual Account Account { get; set; }
     }
 
 }

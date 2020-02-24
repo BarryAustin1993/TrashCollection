@@ -102,21 +102,22 @@ namespace ProjectTrash.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = user.Id, code = code },
                         protocol: Request.Scheme);
 
-                        if (Input.Role == "Customer")
+                         if (Input.Role == "Customer")
                         {
-                            return RedirectToAction( "Create", "Customers");
+                            return RedirectToAction("Create", "Customers");
                         }
                         if (Input.Role == "Employee")
                         {
-                            return RedirectToAction( "Create","Employees" );
+                            return RedirectToAction("Create", "Employees");
                         }
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-                        
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+
                     //if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     //{
-                        
+                       
                     //}
                     //else
                     //{
