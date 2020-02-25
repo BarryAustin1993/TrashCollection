@@ -12,7 +12,6 @@ namespace ProjectTrash.Models
     {
         public Customer()
         {
-            this.Account = new Account();
         }
 
         [Key]

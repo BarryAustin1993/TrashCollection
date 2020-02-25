@@ -12,7 +12,7 @@ using ProjectTrash.Models;
 
 namespace ProjectTrash.Controllers
 {  
-    [Authorize(Roles = "Customer")]
+    //[Authorize(Roles = "Customer")]
     public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -59,7 +59,7 @@ namespace ProjectTrash.Controllers
                     AccountSubscription = new AccountSubscription()                  
                 } 
             };
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["IdentityUser"] = new SelectList(_context.Users, "Id", "Id");
             return View (customer);
         }
 
@@ -72,21 +72,19 @@ namespace ProjectTrash.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-                customer.UserId = userId;
                 customer.Account.Balance = 25;
                 customer.Account.AccountSubscription.AccountStartDate = DateTime.Now;
                 customer.Account.AccountSubscription.IsActive = true;
                 customer.Account.AccountSubscription.IsSuspended = false;
                 customer.Account.AccountSubscription.AccountEndDate = null;
                 customer.Account.AccountSubscription.SuspensionStartDate = null;
-                customer.Account.AccountSubscription.SuspensionEndDate = null;
+                customer.Account.AccountSubscription.SuspensionEndDate = null; 
                 _context.Add(customer);
 
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", customer.UserId);
+
             return View(customer);
         }
 

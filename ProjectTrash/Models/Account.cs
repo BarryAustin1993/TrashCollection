@@ -10,13 +10,8 @@ namespace ProjectTrash.Models
 {
     public class Account
     {
-
-        
-
         public Account()
         {
-            this.AccountSubscription = new AccountSubscription();
-            this.Address = new Address();
         }
         [Key]
         public int AccountID { get; set; }

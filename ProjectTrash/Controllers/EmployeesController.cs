@@ -11,7 +11,7 @@ using ProjectTrash.Models;
 
 namespace ProjectTrash.Controllers
 { 
-    [Authorize(Roles = "Employee")]
+    //[Authorize(Roles = "Employee")]
     public class EmployeesController : Controller
     {
         private readonly ApplicationDbContext _context;
