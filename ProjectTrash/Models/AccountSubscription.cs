@@ -19,11 +19,11 @@ namespace ProjectTrash.Models
 
         public DateTime AccountStartDate { get; set; }
 
-        public DateTime AccountEndDate { get; set; }
+        public DateTime? AccountEndDate { get; set; }
 
-        public DateTime SuspensionStartDate { get; set; }
+        public DateTime? SuspensionStartDate { get; set; }
 
-        public DateTime SuspensionEndDate { get; set; }
+        public DateTime? SuspensionEndDate { get; set; }
 
 
     }

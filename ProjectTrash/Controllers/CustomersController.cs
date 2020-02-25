@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -54,15 +55,9 @@ namespace ProjectTrash.Controllers
             {  
                 Account = new Account()
                 {
-                    Balance = 25,
                     Address = new Address(),
-                    AccountSubscription = new AccountSubscription()
-                    { 
-                        IsSuspended = false,
-                        IsActive = true,
-                        AccountStartDate = DateTime.Now
-                    }                    
-                }
+                    AccountSubscription = new AccountSubscription()                  
+                } 
             };
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return View (customer);
@@ -77,7 +72,17 @@ namespace ProjectTrash.Controllers
         {
             if (ModelState.IsValid)
             {
+                var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                customer.UserId = userId;
+                customer.Account.Balance = 25;
+                customer.Account.AccountSubscription.AccountStartDate = DateTime.Now;
+                customer.Account.AccountSubscription.IsActive = true;
+                customer.Account.AccountSubscription.IsSuspended = false;
+                customer.Account.AccountSubscription.AccountEndDate = null;
+                customer.Account.AccountSubscription.SuspensionStartDate = null;
+                customer.Account.AccountSubscription.SuspensionEndDate = null;
                 _context.Add(customer);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
